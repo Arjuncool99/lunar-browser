@@ -943,7 +943,7 @@ function navTo(rawUrl) {
   var setupProxy = function() {
     try {
       var conn = new BareMux.BareMuxConnection('/baremux/worker.js');
-      var wisp = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host + '/wisp/';
+      var wisp = 'wss://wisp.mercurywork.shop/';
       conn.getTransport().then(function(t) {
         if (t !== '/epoxy/index.mjs') {
           conn.setTransport('/epoxy/index.mjs', [{wisp: wisp}]).then(doProxy).catch(function() { doProxy(); });
